@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /*
  *
  *  Web Starter Kit
@@ -76,4 +77,22 @@
   }
 
   // Your custom JavaScript goes here
+
+  //
+  // TASK 1
+  // clone bacon image and attach this action to **Yeah, I want more bacon!** button
+  //
+
+  const baconBtn = document.querySelector('#overview > section:nth-child(1) > button');
+  const baconSection = document.querySelector('#overview > section:nth-child(2)');
+  const baconImg = document.querySelector('#overview > section:nth-child(2) > img');
+
+  const cloneBacon = () => {
+    const copy = baconImg.cloneNode(true);
+    baconSection.appendChild(copy);
+  };
+
+  if (baconBtn) {
+    baconBtn.addEventListener('click', cloneBacon);
+  }
 })();
