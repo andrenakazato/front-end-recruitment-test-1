@@ -15,7 +15,7 @@ Follow [installation instructions](https://github.com/google/web-starter-kit/blo
 ---
 
 ### Task 1
-Add [this repo](https://github.com/SnowdogApps/front-end-recruitment-test-submodule) as submodule at `/submodule` folder, then run gulp task `submodule` to add symlink.
+Add [this repo](https://github.com/SnowdogApps/front-end-recruitment-test-submodule) as submodule at `/submodule` folder, then run gulp task `submodule` to add symlink. (If in Windows, run terminal in admin mode)
 
 [Here](http://localhost:3000/submodule.html) you should see a beautiful page with slices of fried bacon.
 
