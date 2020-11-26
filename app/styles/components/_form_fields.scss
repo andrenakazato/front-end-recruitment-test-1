@@ -1,0 +1,57 @@
+
+.mdl-textfield {
+  background: white;
+  border-radius: $border-radius;
+  padding: 1.5rem 0.5rem 0.5rem;
+  box-shadow: 0px 2px $shadow-color;
+  width: 100%;
+
+  &__input {
+    border-bottom: none;
+  }
+
+  &__label:after {
+    bottom: 7px;
+  }
+
+  &--floating-label .mdl-textfield__label {
+    left: 7px;
+    font-weight: bold;
+  }
+
+  &.mdl-textfield.is-focused .mdl-textfield__label:after {
+    width: 95%;
+  }
+
+  &__label__icon {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    opacity: 0.25;
+  }
+
+  &__error {
+    background: white;
+    width: calc(100% - 7px);
+    border-radius: $border-radius;
+    margin-left: -7px;
+    padding-left: 7px;
+    box-shadow: 0 2px $shadow-color;
+    z-index: 1;
+  }
+
+  .flag-credit-card {
+    opacity: 1;
+    width: 55px;
+    height: 55px;
+    background-repeat: no-repeat;
+    background-position: center;
+    &.visa {
+      background-image: url(/images/card-visa.svg);
+    }
+    &.master {
+      background-image: url(/images/card-master.svg);
+    }
+  }
+}
