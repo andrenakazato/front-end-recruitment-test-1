@@ -234,7 +234,7 @@
           </section>
         </div>
         <div class="mdl-layout__tab-panel mdl-color--grey-200 is-active" id="checkout">
-          <form action="#" name="checkout_form"></form>
+          <form action="#" method="post" name="checkout_form">
             <section class="section--center mdl-grid mdl-grid--no-spacing">
               <div class="mdl-cell mdl-cell--8-col form">
                 <fieldset class="form__fieldset">
@@ -247,23 +247,23 @@
 
                     <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
                       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" name="first_name" pattern="[A-Z,a-z]*" placeholder="Elon" data-required />
+                        <input class="mdl-textfield__input" type="text" name="first_name" placeholder="Elon" required />
                         <label class="mdl-textfield__label mdl-color-text--black" for="first-name">First name</label>
-                        <span class="mdl-textfield__error">Only alphabet and no spaces.</span>
+                        <span class="mdl-textfield__error"></span>
                       </div>
                     </div>
                     <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
                       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" name="last_name" pattern="[A-Z,a-z]*" placeholder="Musk" />
+                        <input class="mdl-textfield__input" type="text" name="last_name"  placeholder="Musk" required />
                         <label class="mdl-textfield__label mdl-color-text--black" for="last-name">Last name</label>
-                        <span class="mdl-textfield__error">Only alphabet and no spaces.</span>
+                        <span class="mdl-textfield__error"></span>
                       </div>
                     </div>
                     <div class="mdl-cell mdl-cell--12-col">
                       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="email" name="email" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$" placeholder="elon@spacex.com" data-required />
+                        <input class="mdl-textfield__input" type="email" name="email" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$" placeholder="elon@spacex.com" required />
                         <label class="mdl-textfield__label mdl-color-text--black" for="email">Email</label>
-                        <span class="mdl-textfield__error">Email is not correct yet.</span>
+                        <span class="mdl-textfield__error"></span>
                       </div>
                     </div>
                     <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
@@ -281,16 +281,16 @@
                     </div>
                     <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
                       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" name="postal_code" placeholder="10001" pattern=".{5,}" title="Minimum of 5 characters" data-required/>
+                        <input class="mdl-textfield__input" type="text" name="postal_code" placeholder="10001" minlength="5" required/>
                         <label class="mdl-textfield__label mdl-color-text--black" for="postal-code">Postal code</label>
-                        <span class="mdl-textfield__error">Postal number is not complete.</span>
+                        <span class="mdl-textfield__error"></span>
                       </div>
                     </div>
                     <div class="mdl-cell mdl-cell--12-col">
                       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" name="phone" placeholder="(212) 692-93-92" pattern=".{16,}" title="Minimum of 10 characters" data-required/>
+                        <input class="mdl-textfield__input" type="text" name="phone" placeholder="(212) 692-93-92" minlenght="16" required/>
                         <label class="mdl-textfield__label mdl-color-text--black" for="phone">Phone Number</label>
-                        <span class="mdl-textfield__error">Phone number is not complete.</span>
+                        <span class="mdl-textfield__error"></span>
                       </div>
                     </div>
 
@@ -303,29 +303,34 @@
 
                     <div class="mdl-cell mdl-cell--12-col">
                       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" name="credit_card"
-                          placeholder="" pattern=".{25,}" title="Minimum of 16 characters" data-required/>
+                        <input class="mdl-textfield__input" type="text" name="credit_card" placeholder="0000000000000000" pattern="^[0-9]*$" maxlength="16" required/>
                         <label class="mdl-textfield__label mdl-color-text--black" for="credit-card">Credit Card Number</label>
                         <div class="material-icons mdl-textfield__label__icon flag-credit-card visa"></div>
-                        <span class="mdl-textfield__error">Credit Card Number is not complete.</span>
+                        <span class="mdl-textfield__error"></span>
                       </div>
                     </div>
                     <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
-                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="password" name="security_code" placeholder="***" pattern=".{3,}" title="Minimum of 3 characters" data-required/>
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-focused">
+                        <input class="mdl-textfield__input" type="password" autocomplete="off" name="security_code" placeholder="***" maxlength="3" pattern="^[0-9]{1,3}$" required/>
                         <label class="mdl-textfield__label mdl-color-text--black" for="security-code">Security Code</label>
                         <i class="material-icons mdl-textfield__label__icon" id="security-code-tip">help_outline</i>
                         <div class="mdl-tooltip mdl-tooltip--large" for="security-code-tip">
                           Verify the security code behind your credit card.
                         </div>
-                        <span class="mdl-textfield__error">Security Code is not complete.</span>
+                        <span class="mdl-textfield__error"></span>
                       </div>
                     </div>
                     <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
                       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" name="expiration_date" placeholder="MM / YY" pattern=".{5,}" title="Date needs to be MM / YY" data-required/>
+                        <input class="mdl-textfield__input" type="month" name="expiration_date" value="2020-12" pattern="" required/>
                         <label class="mdl-textfield__label mdl-color-text--black" for="expiration-date">Expiration Date</label>
-                        <span class="mdl-textfield__error">Expiration Date is not complete.</span>
+                        <span class="mdl-textfield__error"></span>
+                      </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--12-col">
+                      <div id="form-submit-toast" class="mdl-js-snackbar mdl-snackbar">
+                        <div class="mdl-snackbar__text"></div>
+                        <button class="mdl-snackbar__action" type="button"></button>
                       </div>
                     </div>
                     <div class="mdl-cell mdl-cell--12-col">

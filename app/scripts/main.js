@@ -96,5 +96,42 @@
     baconBtn.addEventListener('click', cloneBacon);
   }
 
+  //
+  // TASK 3
+  // simple form validation
+  //
 
+  const form = document.forms['checkout_form'];
+  const checkErrorForm = (event) => {
+    if (!event.target.checkValidity()) {
+      let error = event.target.validationMessage;
+
+      if (event.target.validity.patternMismatch) {
+        error = 'Please enter a valid ' + event.target.name.replace(/_/g, ' ');
+      }
+
+      event.target.closest('div').querySelector('.mdl-textfield__error').innerHTML = error;
+    }
+  };
+
+  // Add Error Message to the MDL Error System
+  form.addEventListener('focusout', (event) => {
+    checkErrorForm(event);
+  });
+
+  form.addEventListener('submit', (event) => {
+    const snackbar = form.querySelector('[class*=\'snackbar\']');
+    const data = {
+      message: 'Thank you for your order!',
+      timeout: 20000,
+      actionHandler: function(ev) {
+        snackbar.MaterialSnackbar.cleanup_();
+      },
+      actionText: 'Ok',
+    };
+    snackbar.MaterialSnackbar.showSnackbar(data);
+
+    // Disable Form Submiassion
+    event.preventDefault();
+  });
 })();
